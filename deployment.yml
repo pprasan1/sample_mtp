@@ -1,10 +1,11 @@
 ---
-- hosts: all
-  become: true
+- hosts: 44.202.134.255
+  become: yes
   tasks:
-    - name: creation of file using ansible playbook
-      file: path=c:\Users\Administrator\testfile.txt  state= touch
-    - name: Copy File
-      win_copy:
-        src: C:\Users\pprasan1\sample_mtp\Test.1.0.1.nupkg
-        dest: C:\Users\Administrator
+    - name: Copy a file and deploy to windows server
+      ansible.windows.win_copy:
+      src:  C:\Users\pprasan1\sample_mtp\Test.1.0.1.nupkg
+      dest: C:\Users
+      remote_src: yes
+
+
