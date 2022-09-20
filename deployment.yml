@@ -1,0 +1,7 @@
+---
+- hosts: win
+  tasks:
+  - name: Copy File
+    win_copy:
+      src: /c/Users/pprasan1/sample_mtp
+      dest: C:\Users\Administrator\Documents\ansible_examples
