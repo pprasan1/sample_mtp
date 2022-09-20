@@ -1,7 +1,10 @@
 ---
-- hosts: win
+- hosts: all
+  become: true
   tasks:
-  - name: Copy File
-    win_copy:
-      src: /c/Users/pprasan1/sample_mtp
-      dest: C:\Users\Administrator\Documents\ansible_examples
+    - name: creation of file using ansible playbook
+      file: path=c:\Users\Administrator\testfile.txt  state= touch
+    - name: Copy File
+      win_copy:
+        src: C:\Users\pprasan1\sample_mtp\Test.1.0.1.nupkg
+        dest: C:\Users\Administrator
